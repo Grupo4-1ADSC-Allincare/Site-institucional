@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Allincare | Cadastro</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <a href="index.html">
+          <img src="assets/img/logo-removebg-preview.png" />
+        </a>
+
+        <ul class="navbar">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="index.html#simulador">Simulador</a></li>
+          <li><a href="index.html#beneficios">Benefícios</a></li>
+          <li><a href="index.html#sobre-nos">Sobre nós</a></li>
+          <li class="agora"><a href="#">Cadastrar</a></li>
+          <li>
+            <button>
+              <a class="login-hover" href="login.html">Login</a>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="content cadastro">
+      <div class="container cadastro">
+        <img
+          class="cadastro-img"
+          src="assets/img/cadastro-img-removebg-preview.png"
+        />
+
+        <div class="card cadastro">
+          <div class="h2"><h2>Cadastre-se aqui!</h2></div>
+          <form>
+            <label for="inputNomeFanstasia"></label>
+            <input
+              placeholder="Nome fantasia"
+              type="text"
+              id="inputNomeFantasia"
+            />
+            <label for="inputCnpj"></label>
+            <input placeholder="Cnpj" type="number" id="inputCnpj" />
+          </form>
+          <div class="h2"><h2>Endereço</h2></div>
+          <form>
+            <label for="inputCep"></label>
+            <input placeholder="Cep" type="number" id="inputCep" />
+            <label for="inputEndereco"></label>
+            <input placeholder="Endereço" type="text" id="inputEndereco" />
+          </form>
+          <div class="h2"><h2>E-mail/Senha</h2></div>
+          <form>
+            <label for="inputEmail"></label>
+            <input placeholder="E-mail" type="email" id="inputEmail" />
+            <label for="inputTelefone"></label>
+            <input placeholder="Telefone" type="text" id="inputTelefone" />
+            <label for="inputSenha"></label>
+            <input placeholder="Senha" type="password" id="inputSenha" />
+            <label for="inputConfirmarSenha"></label>
+            <input
+              placeholder="Confirme sua senha"
+              type="password"
+              id="inputConfirmarSenha"
+            />
+            <button onclick="cadastrar()" type="button">Cadastrar</button>
+          </form>
+          <div id="div_aguardar" class="loading-div">
+            <img src="./assets/circle-loading.gif" id="loading-gif" />
+          </div>
+          <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+              <span id="mensagem_erro"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider-left"></div>
+
+    <footer>
+      <div class="content-footer login">
+        <div class="container">
+          <h1><span>Allincare</span> &copy; 2022</h1>
+          <div>
+            <span><h4>Contato</h4></span>
+            <p>Email: allincare@controltech.com</p>
+            <p>Telefone: (11) 3972-6636</p>
+            <p>Whatsapp: (11) 99340-2112</p>
+            <p>Endereço: Rua Haddock Lobo, 595 - Cerqueira césar</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script>
+  function cadastrar() {
+    aguardar()
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = inputNomeFantasia.value
+    var cepVar = inputCep.value
+    var enderecoVar = inputEndereco.value
+    var emailVar = inputEmail.value
+    var senhaVar = inputSenha.value
+    var confirmacaoSenhaVar = inputConfirmarSenha.value
+    var telefoneVar = inputTelefone.value
+    var cnpjVar = inputCnpj.value
+
+    if (
+      nomeVar == '' ||
+      emailVar == '' ||
+      senhaVar == '' ||
+      confirmacaoSenhaVar == ''
+    ) {
+      //cardErro.style.display = 'block'
+      mensagem_erro.innerHTML = 'Preencha todos os campos para prosseguir!'
+
+      finalizarAguardar()
+
+      return false
+    } else {
+      //setInterval(sumirMensagem, 5000)
+    }
+
+    if (emailVar.indexOf('@') == -1 || emailVar.indexOf('.com') == -1) {
+      //cardErro.style.display = 'block'
+      mensagem_erro.innerHTML =
+        'Ops, e-mail inválido! Verifique e tente novamente.'
+      finalizarAguardar()
+      return false
+    } else {
+      //setInterval(sumirMensagem, 5000)
+    }
+
+    if (senhaVar != confirmacaoSenhaVar) {
+      //cardErro.style.display = 'block'
+      mensagem_erro.innerHTML =
+        'As senhas inseridas devem ser iguais para prosseguir!'
+      finalizarAguardar()
+      return false
+    } else {
+      //setInterval(sumirMensagem, 5000)
+    }
+
+    // Enviando o valor da nova input
+    fetch('/usuarios/cadastrar', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+        telefoneServer: telefoneVar,
+        cnpjServer: cnpjVar,
+        enderecoServer: enderecoVar,
+        cepServer: cepVar
+      })
+    })
+      .then(function (resposta) {
+        console.log('resposta: ', resposta)
+
+        if (resposta.ok) {
+          //cardErro.style.display = 'block'
+          //mensagem_erro.innerHTML = 'Cadastro realizado com sucesso!'
+          window.location = 'login.html'
+          //limparFormulario()
+          finalizarAguardar()
+        } else {
+          throw 'Houve um erro ao tentar realizar o cadastro!'
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`)
+        finalizarAguardar()
+      })
+
+    return false
+  }
+  function aguardar() {
+    var divAguardar = document.getElementById('div_aguardar')
+    divAguardar.style.display = 'flex'
+  }
+
+  function finalizarAguardar(texto) {
+    var divAguardar = document.getElementById('div_aguardar')
+    divAguardar.style.display = 'none'
+
+    var divErrosLogin = document.getElementById('div_erros_login')
+    if (texto) {
+      divErrosLogin.innerHTML = texto
+    }
+  }
+  //function sumirMensagem() {
+  //  cardErro.style.display = 'none'
+  //}
+</script>

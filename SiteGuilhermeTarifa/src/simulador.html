@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Allincare | Simulador</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <a href="index.html">
+          <img src="assets/img/logo-removebg-preview.png" />
+        </a>
+
+        <ul class="navbar">
+          <li><a href="index.html">Início</a></li>
+          <li class="agora"><a href="index.html#simulador">Simulador</a></li>
+          <li><a href="index.html#beneficios">Benefícios</a></li>
+          <li><a href="index.html#sobre-nos">Sobre nós</a></li>
+          <li><a href="cadastro.html">Cadastrar</a></li>
+          <li>
+            <button class="agora-login">
+              <a class="login-hover" href="#">Login</a>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="simulador">
+      <div class="container">
+        <div class="card simulador">
+          <div>
+            Simule agora!
+            <form action="">
+              <input id="qtd_lotes" placeholder="Lote de vacinas:" />
+              <input id="vac_perdidas" placeholder="Vacinas perdidas:" />
+              <input
+                id="valor_vacina"
+                placeholder="Preço da vacina (unidade):"
+              />
+            </form>
+            <button class="btn" onclick="calcular()">Calcular</button>
+          </div>
+        </div>
+        <div id="caixa_resultado">
+          <div id="resultado"></div>
+        </div>
+      </div>
+    </div>
+    <div class="divider-left"></div>
+
+    <footer>
+      <div class="content-footer login">
+        <div class="container">
+          <h1><span>Allincare</span> &copy; 2022</h1>
+          <div>
+            <span><h4>Contato</h4></span>
+            <p>Email: allincare@controltech.com</p>
+            <p>Telefone: (11) 3972-6636</p>
+            <p>Whatsapp: (11) 99340-2112</p>
+            <p>Endereço: Rua Haddock Lobo, 595 - Cerqueira césar</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

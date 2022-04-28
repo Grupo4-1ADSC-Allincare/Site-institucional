@@ -1,0 +1,229 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow', "Segoe UI", Tahoma, Verdana, sans-serif;
+    background-color: #ADD8E6;
+  }
+  .logo{
+    background-image: url(https://i.imgur.com/pHNnkN9.png);
+  width: 190px;
+    height: 87px;
+    position: absolute;
+    float: left;
+    background-size: 100% 100%;
+    margin-left: 6%;
+    margin-top: 0.7%;
+  }
+  .imgtemp{
+    background-image: url(https://www.pngplay.com/wp-content/uploads/8/Temperature-Icon-Transparent-Background.png);
+    width: 190px;
+    height: 357px;
+    position: absolute;
+    background-size: 100% 100%;
+    margin-left: 70%;
+    margin-top: 9%;
+  }
+  
+  .container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+  }
+  
+  .header {
+    border-bottom: 3px solid #ADD8E6;
+  }
+  
+  .header .container {
+    justify-content: space-between;
+  }
+  
+  .header a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  .agora {
+    font-weight: 800;
+  }
+  
+  .navbar {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    color: #810000;
+  }
+  
+  
+  .titulo {
+    color: #32b9cd;
+    width: fit-content;
+    font-weight: 500;
+  }
+  
+  
+  /* BANNER */
+  
+  .bannerindex {
+    height: 40vh;
+    padding: 40px 0;
+    color: white;
+    background-color: #ADD8E6;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .banner .container {
+    height: 400px;
+    font-size: 36px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .tamanho-conteudo { 
+    height: fit-content !important;
+  }
+  
+  .bannerindex p {
+   
+    margin: 0;
+    padding: 0;
+    width: 780px;
+    font-size: 46px;
+    color: black;
+  }
+  
+  .bannerindex .container span {
+    font-weight: 800;
+  }
+  .meiodosite {
+  
+    height: 90vh;
+  
+    margin-top: 6%; 
+  }
+  
+  
+  .tsaiba{
+    
+    position: absolute;
+   
+    margin-left: 43.4%;
+    font-size: 27px;
+  
+  }
+  .saibamais{
+    width: 70px;
+    height: 60px;
+    position: absolute;
+    background-size: 100% 100%;
+    margin-left: 45%;
+    margin-top: 2.0%;
+  
+  }
+  .descetexto{
+    padding-top: 10%;
+  }
+  .meiodosite .t1{
+    font-size: 50px;
+    margin-left: 10%;
+   
+  }
+  .meiodosite .t2{
+    font-size: 35px;
+    margin-left: 10%;
+  }
+  .simuleagora{
+   padding-top: 7%;
+    margin-left: 10%;
+  }
+  .imgcaminhao{
+    width: 690px;
+    height: 457px;
+    position: absolute;
+    background-size: 100% 100%;
+    margin-left: 63.6%;
+    margin-top: 14%;
+  }
+  
+  /* missao visao valores */
+  
+  .social {
+    background-color: #e5e5e5;
+    display: flex;
+  }
+  
+  .social .container{
+    justify-content: center;
+  }
+  
+  .box img {
+    width: 280px;
+  margin-left: -920%;
+  }
+  
+  .social .container .boxes {
+    display: flex;
+  }
+  
+  .social p {
+    text-align: center;
+  }
+  
+  .box {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .controlacaixa{
+    margin-left: 40%;
+    display: flex;
+    flex-direction: column;
+  
+  }
+  
+  .caixa1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  background-color: #FFD3FB;
+  margin-bottom: 30px;
+  width: 490px;
+  height: 90px;
+  }
+  .caixa2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  background-color: #FFD3FB;
+  margin-bottom: 30px;
+  width: 490px;
+  height: 90px;
+  }
+  .caixa3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  background-color: #FFD3FB;
+  margin-bottom: 30px;
+  width: 490px;
+  height: 90px;
+  }
+  /* FOOTER */
+  
+  .footer {
+    background-color: #ffffff;
+    height: 150px;
+    color: rgb(0, 0, 0);
+    display: flex;
+    font-size: 15px;
+  }
+  
+  .footer .container {
+    justify-content: center;
+  }

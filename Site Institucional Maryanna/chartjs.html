@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagem/x-icon" href="https://i.imgur.com/uDM4hMz.png" />
+    <link rel="stylesheet" href="css/style_chart.css">
+
+    <title>Allincare | Chart.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="container">
+            <a href="index.html"><img src="https://i.imgur.com/pHNnkN9.png"></a>
+            <ul class="navbar">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="simulador.html">Simulador</a></li>
+                <li class="agora"><a href="chartjs.html">Dashboards</a></li>
+                <li><a href="#">Sobre Nós</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li class="borda"><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="banner">
+        <div class="container">
+            <div class="cardDash">
+                <div>
+                    <canvas id="myChart1" style="position: relative; height:40vh; width:40vw"></canvas>
+                </div>
+
+                <div>
+                    <canvas id="myChart2" style="position: relative; height:40vh; width:40vw;"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <h4 class="txt1">Allincare © 2022</h4>
+            <div class="txt2">
+                <h3>Contato</h3>
+                E-mail: allincarecontroltech@gmail.com<br>
+                Telefone: (11) 3972-6636<br>
+                WhatsApp: (11) 99340-2112
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    const labels1 = [
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '17:00',
+    ];
+
+    const data1 = {
+        labels: labels1,
+        datasets: [{
+            label: 'Temperatura',
+            backgroundColor: '#FF6384',
+            borderColor: '#FF6384',
+            data: [20 + 10, 30 - 1, 40 - 12, 50 - 25, 60 - 38, 70 - 47, 80, 90],
+        },
+        {
+            label: 'Umidade',
+            backgroundColor: '#36A2EB',
+            borderColor: '#36A2EB',
+            data: [20 + 60, 30 + 52, 40 + 40, 50 + 35, 60 + 20, 70 + 13, 80, 90],
+        }
+        ]
+    };
+
+    const config1 = {
+        type: 'line',
+        data: data1,
+        options: {}
+    };
+
+    const labels2 = [
+        'Janeiro',
+        'Fevereiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho',
+    ];
+
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+            label: 'Temperatura Média',
+            backgroundColor: '#FF6384',
+            borderColor: '#FF6384',
+            data: [0 + 22, 10 + 14, 20 + 7, 30 - 7, 40 - 20, 50 - 32, 60, 70, 80, 90, 100],
+        },
+        {
+            label: 'Umidade Média',
+            backgroundColor: '#36A2EB',
+            borderColor: '#36A2EB',
+            data: [0 + 90, 10 + 79, 20 + 73, 30 + 57, 40 + 48, 50 + 32, 60, 70, 80, 90, 100],
+        }
+        ]
+    };
+
+    const config2 = {
+        type: 'bar',
+        data: data2,
+        options: {}
+    };
+</script>
+
+<script>
+    const myChart1 = new Chart(
+        document.getElementById('myChart1'),
+        config1
+    );
+
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config2
+    );
+</script>
+
+</html>

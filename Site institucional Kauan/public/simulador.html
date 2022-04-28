@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Simulador</title>
+    <link rel="stylesheet" href="normalize.css">
+    <script src="./js/funcoes.js"></script>
+
+    <link rel="icon" href="assets/icon/process.png">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="logo"></div>
+    <!--header inicio-->
+    <div class="header">
+        <div class="container">
+            <h1 class="titulo"></h1>
+            <ul class="navbar">
+                <li>
+                    <a href="./index.html">Inicio</a>
+                </li>
+                <li class="agora">Simulador</li>
+               
+                <li>
+                    <a href="./login.html">Login</a>
+                </li>
+                <li>
+                    <a href="./login.html">Cadastro</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- simulador inicio -->
+    <div class="simulador">
+        <div class="container">
+            <h2>Simulador</h2>
+            <body>
+                <div class="orgasimu">
+                 <input placeholder="Lote de vacinas:" class="i1" id="qtd_lotes">
+                 <input placeholder="Vacinas perdidas:" class="i2" id="vac_perdidas"> 
+                 <input placeholder="Preço da vacina por unidade :" class="i3" id="valor_vacina">  
+            
+                
+            
+                
+            </div> <br>
+            <button class="bsimula" onclick="calcular()"> 
+                Calcular 
+            </button>
+            <div id="mostrar_valor"> </div> 
+
+        </div>
+    </div>
+    <!-- simulador fim -->
+
+    <!--footer inicio-->
+    <div class="footer">
+        <div class="container">
+            <h4>Feito com amor por um aluno &hearts;SPTech &copy; 2022</h4>
+        </div>
+    </div>
+    <!--footer fim-->
+
+
+</body>
+
+</html>
+<script> 
+    function calcular(){
+        var lote = 1300000
+        var quantidade = Number(qtd_lotes.value)
+        var vacinas_perdidas = Number(vac_perdidas.value)
+        var preço = Number(valor_vacina.value)
+        var calc1 = lote * quantidade 
+        var calc2 = calc1 - vacinas_perdidas 
+        var calc3 = preço * vacinas_perdidas 
+        var calc4 = calc2 * preço
+        var porcentagem_perda = (vacinas_perdidas * 100) / calc1
+        var estimativa_redução_vacinas = (vacinas_perdidas * 40) / 100
+        var estimativa_redução_monetaria = (calc3 * 40) / 100
+        
+        mostrar_valor.innerHTML = `<br>A transportadora entregou <b>${calc2}</b> de vacinas, perdendo no processo <b style='color: red'>${vacinas_perdidas}</b> vacinas, com isso
+        houve um prejuízo monetário de <b style='color: red'>R$${calc3}</b> por conta das vacinas perdidas.<br>
+        Essa perda equivale à <b style='color: red'>${porcentagem_perda.toFixed(2)}%</b> das vacinas.<br>
+        Com o nosso serviço estimamos uma redução não só nas perdas das vacinas, mas também uma redução do prejuízo monetário. Essa redução 
+        é de <b style='color: green'>40%</b>, estimando que na próxima entrega haja uma <b><u>perda menor</u></b>, que seria de <b style='color: green'>${estimativa_redução_vacinas}</b> vacinas e um <b><u>prejuízo monetário menor</u></b>, sendo <b style='color: green'>R$${estimativa_redução_monetaria}</b>. `
+        
+        
+        
+    }
+    </script>

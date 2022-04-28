@@ -1,0 +1,196 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('fundo.png');
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.header {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border-bottom: 2px solid #E6005A;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.header .container img {
+    width: 250px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    width: 700px;
+    align-items: center;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #E6005A;
+}
+
+.agora {
+    font-weight: bold;
+}
+
+.borda {
+    border: 2px solid #ADD8E6;
+    padding: 4px 20px;
+    border-radius: 16px;
+}
+
+a:hover {
+    color: #ADD8E6;
+    text-decoration: underline;
+}
+
+.borda:hover {
+    border-color: #EE2689;
+    color: #ADD8E6;
+}
+
+.banner {
+    background-color: #ADD8E6;
+    background-size: cover;
+}
+
+.banner .containerCadastro {
+    height: 700px;
+    display: flex;
+    color: white;
+    align-items: center;
+}
+
+.banner .login {
+    justify-content: center;
+}
+
+.cardCadastro {
+    background-color: #FFFFFF;
+    color: #000000;
+    width: 400px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.cardCadastro h3 {
+    margin-bottom: 0;
+    color: #E6005A;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+    width: 250px;
+}
+
+label {
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 9px;
+    margin-bottom: 3px;
+    padding: 0;
+}
+
+select {
+    background-color: transparent;
+    color: #000000;
+    border: none;
+    border-bottom: 2px solid #E6005A;
+}
+
+form input {
+    margin-top: 8px;
+    padding: 8px;
+    border: none;
+    border-bottom: 2px solid #E6005A;
+    background-color: transparent;
+}
+
+input::placeholder {
+    color: black;
+    font-weight: bolder;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    margin-top: 16px;
+    padding: 10px 15px;
+    width: 120px;
+    align-self: center;
+    background-color: #FF65A1C4;
+    color: white;
+    font-size: 18px;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #E4598EC4;
+    cursor: pointer;
+}
+
+.footer {
+    background-color: #E5E5E5;
+    height: 150px;
+    color: black;
+    border-top: 2px solid #E6005A;
+}
+
+.footer .container {
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.footer .txt1 {
+    border-right: 1px solid #EE2689;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+}
+
+.footer .txt2 {
+    width: 50%;
+    border-left: 1px solid #EE2689;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.txt2 h3 {
+    font-weight: normal;
+    color: #EE2689;
+}

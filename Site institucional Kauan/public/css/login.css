@@ -1,0 +1,210 @@
+body {
+    margin: 0;
+    font-family: nunito, sans-serif;
+    background-color: #ADD8E6;
+    justify-content: center;
+    align-items: center;
+
+}
+.logo{
+    background-image: url(https://i.imgur.com/pHNnkN9.png);
+  width: 190px;
+    height: 87px;
+    position: absolute;
+    float: left;
+    background-size: 100% 100%;
+    margin-left: 6%;
+    margin-top: 0.7%;
+  }
+
+nav {
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+
+}
+h1, a {
+    color: white;
+    text-decoration: none;
+}
+nav ul {
+    align-items: center;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+
+
+}
+li {
+    padding: 0 25px;
+}
+li:hover, .h1:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+
+.bodymeio {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+    background-color: #ADD8E6;
+    transition: all 0.2s ease;
+    
+
+
+}
+.muie{
+    background-image: url(https://i.imgur.com/ko4649k.png);
+  width: 690px;
+    height: 507px;
+    position: absolute;
+    background-size: 100% 100%;
+    margin-left: 17%;
+    margin-top: 19%;
+  }
+
+.container {
+    position: relative;
+    max-width: 430px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.046);
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 40.6);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    
+}
+
+.container .form {
+    padding: 30px;
+}
+
+.container .form .title{
+    color: #e26cb5;
+    position: relative;
+    font-size: 27px;
+    font-weight: 600;
+    
+}
+
+.form .input-field {
+    position: relative;
+    height: 50px;
+    width: 80%;
+    margin-top: 30px;
+    
+
+}
+.input-field input {
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    padding: 0 35px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 2px solid rgb(218, 11, 218) ;
+    border-top: transparent 2px solid;
+    
+}
+.input-field input:is(:focus,:valid){
+    border-bottom-color:#001136;
+}
+
+.input-field i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 23px;
+}
+.input-field input:is(:focus, :valid) ~ i {
+    color: #001136;
+}
+.input-field i.icon {
+    left: 0;
+}
+.input-field i.showHidePw {
+    right:-20%;
+}
+.form .checkbox-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.checkbox-text .checkbox-content {
+    display: flex;
+    align-items: center;
+}
+.checkbox-content input {
+    margin: 0 8px -2px 2px;
+    accent-color: #001136;
+}
+.form .text{
+    color: #333;
+    font-size: 14px;
+}
+.form a:hover {
+    text-decoration: underline;
+}
+.form .button{
+    margin-top: 35px;
+
+}
+.form .button input {
+    border: none;
+    background-color: #FF65A1C4;
+    color: white;
+    margin-left: 10%;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    cursor:pointer;
+}
+.button input:hover{
+    background-color: #f226a4;
+}
+.form .login-signup{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.footer{
+    margin: none;
+    background-color: white;
+    height: 210px;
+    width: 100%;
+    display: flex;
+    margin-top: 2%;
+    justify-content: center;
+    
+    }
+    .footermini1{
+      margin-top: 2%;
+    border-right: #000000 solid 2px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 6%;
+    margin-bottom: 2%;
+      
+    }
+    .footermini2{
+     
+      margin-left: 10%;
+      font-size: 20px;
+      display: flex;
+    justify-content: center;
+    align-items: center;
+      
+    }
