@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DashBoard | Allincare</title>
+    <link rel="stylesheet" type="text/css" href="dashboards.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="navigation">
+        <ul>
+          <li>
+            <a href="#">
+              <span class="icon"
+                ><ion-icon name="medkit-outline"></ion-icon
+              ></span>
+              <span class="title"
+                >Bem-vindo, <span class="spotlight">TransFarm</span></span
+              >
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon"
+                ><ion-icon name="home-outline"></ion-icon
+              ></span>
+              <span class="title">DashBoard</span>
+            </a>
+          </li>
+
+          <!-- <li>
+            <a href="#">
+              <span class="icon"
+                ><ion-icon name="bar-chart-outline"></ion-icon
+              ></span>
+              <span class="title">Gráfico</span>
+            </a>
+          </li> -->
+          <li>
+            <a href="#">
+              <span class="icon"
+                ><ion-icon name="chatbubble-outline"></ion-icon
+              ></span>
+              <span class="title">Mensagem</span>
+            </a>
+          </li>
+          <li>
+            <a href="/public/login.html">
+              <span class="icon"
+                ><ion-icon name="log-out-outline"></ion-icon
+              ></span>
+              <span class="title">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!--Principal-->
+      <div class="main">
+        <div class="topbar">
+          <div class="toggle">
+            <ion-icon name="menu-outline"></ion-icon>
+          </div>
+
+          <!-- Search
+          <div class="search">
+            <label>
+              <input type="text" placeholder="Search here" />
+              <ion-icon name="search-outline"></ion-icon>
+            </label>
+          </div>-->
+
+          <div class="search">
+            <div class="title">
+              Olá, <span class="spotlight">Daiana Santos</span>
+            </div>
+          </div>
+
+          <!-- UserImage-->
+          <div class="user">
+            <img src="user.jpg" />
+          </div>
+        </div>
+
+        <!--KPis-->
+        <div class="cardBox">
+          <div class="card">
+            <div>
+              <div class="numbers">-22,5°C</div>
+              <div class="cardName">Crítico frio</div>
+            </div>
+            <div class="iconbx">
+              <ion-icon name="thermometer-outline"></ion-icon>
+            </div>
+          </div>
+
+          <div class="card">
+            <div>
+              <div class="numbers">-21,5°C</div>
+              <div class="cardName">Alerta frio</div>
+            </div>
+            <div class="iconbx">
+              <ion-icon name="thermometer-outline"></ion-icon>
+            </div>
+          </div>
+
+          <div class="card">
+            <div>
+              <div class="numbers">-20°C</div>
+              <div class="cardName">Ideal</div>
+            </div>
+            <div class="iconbx">
+              <ion-icon name="thermometer-outline"></ion-icon>
+            </div>
+          </div>
+
+          <div class="card">
+            <div>
+              <div class="numbers">-18,5°C</div>
+              <div class="cardName">Alerta quente</div>
+            </div>
+            <div class="iconbx">
+              <ion-icon name="thermometer-outline"></ion-icon>
+            </div>
+          </div>
+
+          <div class="card">
+            <div>
+              <div class="numbers">-17,5°C</div>
+              <div class="cardName">Crítico quente</div>
+            </div>
+            <div class="iconbx">
+              <ion-icon name="thermometer-outline"></ion-icon>
+            </div>
+          </div>
+        </div>
+
+        <div class="details">
+          <!-- Tela de detalhes-->
+          <div class="ordersTemp">
+            <div class="cardHeader">
+              <h2>Caminhões Ativos</h2>
+              <a href="#" class="btn">Ver tudo</a>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <td>Modelo caminhão</td>
+                  <td>Id</td>
+                  <td>Temperatura</td>
+                  <td>Status</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <a onclick="abrir_model()" class="btn-model"
+                      >Volks - 8150</a
+                    >
+                  </td>
+                  <td>02</td>
+                  <td>-18°C</td>
+                  <td>
+                    <span class="status alerta-quente">Alerta quente</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Mercedes - 710</td>
+                  <td>03</td>
+                  <td>-22,9°C</td>
+                  <td><span class="status critico-frio">Crítico frio</span></td>
+                </tr>
+                <tr>
+                  <td>Volks - 9150</td>
+                  <td>04</td>
+                  <td>-21,9°C</td>
+                  <td><span class="status alerta-frio">Alerta frio</span></td>
+                </tr>
+                <tr>
+                  <td>Volks - 13180</td>
+                  <td>01</td>
+                  <td>-19,9°C</td>
+                  <td><span class="status ideal">Ideal</span></td>
+                </tr>
+                <tr>
+                  <td>Volvo - FH 460</td>
+                  <td>05</td>
+                  <td>-17,9°C</td>
+                  <td>
+                    <span class="status alerta-quente">Alerta quente</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Mercedes - Atego 2425</td>
+                  <td>06</td>
+                  <td>-23,1°C</td>
+                  <td><span class="status critico-frio">Crítico frio</span></td>
+                </tr>
+                <tr>
+                  <td>Mercedes - Accelo 815</td>
+                  <td>07</td>
+                  <td>-22,1°C</td>
+                  <td><span class="status alerta-frio">Alerta frio</span></td>
+                </tr>
+                <tr>
+                  <td>Volvo - 260</td>
+                  <td>08</td>
+                  <td>-18,4°C</td>
+                  <td>
+                    <span class="status alerta-quente">Alerta quente</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Scania - R440</td>
+                  <td>09</td>
+                  <td>-18,2°C</td>
+                  <td>
+                    <span class="status alerta-quente">Alerta quente</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Volks - 13180</td>
+                  <td>10</td>
+                  <td>-21,7°C</td>
+                  <td><span class="status alerta-frio">Alerta frio</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- detalhe top 10-->
+          <div class="recentTemp">
+            <div class="cardHeader">
+              <h2>Caminhões desregulados</h2>
+            </div>
+            <table>
+              <tr>
+                <td width="60px">
+                  <div class="imgBx">
+                    <ion-icon class="ion" name="car-outline"></ion-icon>
+                  </div>
+                </td>
+
+                <td>
+                  <h4>
+                    Id:06<br /><span class="critico-frio">Crítico frio</span>
+                  </h4>
+                </td>
+                <td>Caminhão em estado crítico, faça algo imediatamente</td>
+              </tr>
+              <tr>
+                <td width="60px">
+                  <div class="imgBx">
+                    <ion-icon class="ion" name="car-outline"></ion-icon>
+                  </div>
+                </td>
+                <td>
+                  <h4>
+                    Id:03<br /><span class="critico-frio">Crítico frio</span>
+                  </h4>
+                </td>
+                <td>Caminhão em estado crítico, faça algo imediatamente</td>
+              </tr>
+              <tr>
+                <td width="60px">
+                  <div class="imgBx">
+                    <ion-icon class="ion" name="car-outline"></ion-icon>
+                  </div>
+                </td>
+                <td>
+                  <h4>
+                    Id:07<br /><span class="alerta-frio">Alerta frio</span>
+                  </h4>
+                </td>
+                <td>Caminhão em estado crítico, faça algo imediatamente</td>
+              </tr>
+              <tr>
+                <td width="60px">
+                  <div class="imgBx">
+                    <ion-icon class="ion" name="car-outline"></ion-icon>
+                  </div>
+                </td>
+                <td>
+                  <h4>
+                    Id:04<br /><span class="alerta-frio">Alerta frio</span>
+                  </h4>
+                </td>
+                <td>Caminhão em estado crítico, faça algo imediatamente</td>
+              </tr>
+              <tr>
+                <td width="60px">
+                  <div class="imgBx">
+                    <ion-icon class="ion" name="car-outline"></ion-icon>
+                  </div>
+                </td>
+                <td>
+                  <h4>
+                    Id:10<br /><span class="alerta-frio">Alerta frio</span>
+                  </h4>
+                </td>
+                <td>Caminhão em estado crítico, faça algo imediatamente</td>
+              </tr>
+              <tr>
+                <td width="60px">
+                  <div class="imgBx">
+                    <ion-icon class="ion" name="car-outline"></ion-icon>
+                  </div>
+                </td>
+                <td>
+                  <h4>
+                    Id:05<br /><span class="alerta-quente">Alerta quente</span>
+                  </h4>
+                </td>
+                <td>Caminhão em estado crítico, faça algo imediatamente</td>
+              </tr>
+              <tr>
+                <td width="60px">
+                  <div class="imgBx">
+                    <ion-icon class="ion" name="car-outline"></ion-icon>
+                  </div>
+                </td>
+                <td>
+                  <h4>
+                    Id:02<br /><span class="alerta-quente">Alerta quente</span>
+                  </h4>
+                </td>
+                <td>Caminhão em estado crítico, faça algo imediatamente</td>
+              </tr>
+              <tr>
+                <td width="60px">
+                  <div class="imgBx">
+                    <ion-icon class="ion" name="car-outline"></ion-icon>
+                  </div>
+                </td>
+                <td>
+                  <h4>
+                    Id:09<br /><span class="alerta-quente">Alerta quente</span>
+                  </h4>
+                </td>
+                <td>Caminhão em estado crítico, faça algo imediatamente</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="modal-container">
+            <div class="modal">
+              <h1 class="title">Caminhão id: 05 - VolvoFH460</h1>
+              <div class="graphBox">
+                <div class="box">
+                  <canvas id="myChart"></canvas>
+                </div>
+                <div class="box"><canvas id="myChart2"></canvas></div>
+              </div>
+
+              <button onclick="fechar_model()" class="btn">Fechar</button>
+            </div>
+          </div>
+
+          <!-- <div class="cardAlert">
+          <div class="card">
+            <div>
+              <div class="numbers">-24,2°C</div>
+              <div class="cardName">idCaminhão: 01</div>
+            </div>
+            <div class="iconbx">
+              <ion-icon name="car-outline"></ion-icon>
+            </div>
+          </div>
+
+          <div class="card">
+            <div>
+              <div class="numbers">-22,6°C</div>
+              <div class="cardName">idCaminhão: 02</div>
+            </div>
+            <div class="iconbx">
+              <ion-icon name="car-outline"></ion-icon>
+            </div>
+          </div>
+
+          <div class="card">
+            <div>
+              <div class="numbers">-21,1°C</div>
+              <div class="cardName">idCaminhão: 03</div>
+            </div>
+            <div class="iconbx">
+              <ion-icon name="car-outline"></ion-icon>
+            </div>
+          </div>
+
+          <div class="card">
+            <div>
+              <div class="numbers">-18,4°C</div>
+              <div class="cardName">idCaminhão: 04</div>
+            </div>
+            <div class="iconbx">
+              <ion-icon name="car-outline"></ion-icon>
+            </div>
+          </div>
+          -->
+        </div>
+      </div>
+    </div>
+    <script src="public/js/my_chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script>
+      // menuToggle
+      let toggle = document.querySelector('.toggle')
+      let navigation = document.querySelector('.navigation')
+      let main = document.querySelector('.main')
+
+      toggle.onclick = function () {
+        navigation.classList.toggle('active')
+        main.classList.toggle('active')
+      }
+      //add class in selected list item
+      let list = document.querySelectorAll('.navigation li')
+      function activeLink() {
+        list.forEach((item) => item.classList.remove('hovered'))
+        this.classList.add('hovered')
+      }
+      list.forEach((item) => item.addEventListener('mouseover', activeLink))
+    </script>
+  </body>
+  <script>
+    function atualizacaoPeriodica() {
+      obterdados(1)
+      obterdados(2)
+      obterdados(3)
+      obterdados(4)
+
+      function sendData() {
+        var http = new XMLHttpRequest()
+        http.open('POST', 'http://localhost:3000/api/sendData', false)
+        http.send(null)
+      }
+
+      setInterval(() => {
+        sendData()
+      }, 2000)
+      setTimeout(atualizacaoPeriodica, 5000)
+    }
+
+    function obterdados(idAquario) {
+      fetch(`/medidas/tempo-real/${idAquario}`)
+        .then((resposta) => {
+          if (resposta.ok) {
+            resposta.json().then((resposta) => {
+              console.log(`Dados recebidos: ${JSON.stringify(resposta)}`)
+
+              var dados = {
+                temperatura: resposta[0].temperatura
+              }
+
+              alertar(resposta[0].temperatura, idAquario)
+            })
+          } else {
+            console.error('Nenhum dado encontrado ou erro na API')
+          }
+        })
+        .catch(function (error) {
+          console.error(
+            `Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`
+          )
+        })
+    }
+
+    function alertar(temperatura, idAquario) {
+      var limites = {
+        muito_quente: 23,
+        quente: 22,
+        ideal: 20,
+        frio: 10,
+        muito_frio: 5
+      }
+
+      var classe_temperatura = 'cor-alerta'
+
+      if (temperatura >= limites.muito_quente) {
+        classe_temperatura = 'cor-alerta perigo-quente'
+        console.log('caiu no 1')
+      } else if (
+        temperatura < limites.muito_quente &&
+        temperatura >= limites.quente
+      ) {
+        classe_temperatura = 'cor-alerta alerta-quente'
+        console.log('caiu no 2')
+      } else if (temperatura < limites.quente && temperatura > limites.frio) {
+        classe_temperatura = 'cor-alerta ideal'
+        console.log('caiu no 3')
+      } else if (
+        temperatura <= limites.frio &&
+        temperatura > limites.muito_frio
+      ) {
+        classe_temperatura = 'cor-alerta alerta-frio'
+        console.log('caiu no 4')
+      } else if (temperatura < limites.min_temperatura) {
+        classe_temperatura = 'cor-alerta perigo-frio'
+        console.log('caiu no 5')
+      }
+
+      var card
+
+      if (idAquario == 1) {
+        temp_aquario_1.innerHTML = temperatura + '°C'
+        card = card_1
+      } else if (idAquario == 2) {
+        temp_aquario_2.innerHTML = temperatura + '°C'
+        card = card_2
+      } else if (idAquario == 3) {
+        temp_aquario_3.innerHTML = temperatura + '°C'
+        card = card_3
+      } else if (idAquario == 4) {
+        temp_aquario_4.innerHTML = temperatura + '°C'
+        card = card_4
+      }
+
+      // alterando
+      card.className = classe_temperatura
+    }
+  </script>
+  <!-- // chartJSON -->
+  <script>
+    const ctx = document.getElementById('myChart').getContext('2d')
+    const myChart = new Chart(ctx, {
+      type: 'polarArea',
+      data: {
+        labels: ['Janeiro', 'Fevereiro', 'Março'],
+        datasets: [
+          {
+            label: 'traffic source',
+            data: [18.2, 18.9, 20.2],
+            backgroundColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)'
+            ]
+          }
+        ]
+      },
+      options: {
+        responsive: true
+      }
+    })
+
+    // chartJS2
+
+    const ctx2 = document.getElementById('myChart2').getContext('2d')
+    const myChart2 = new Chart(ctx2, {
+      type: 'line',
+      data: {
+        labels: ['8:10', '8:15', '8:20', '8:25', '8:30', '8:35', '8:40'],
+        datasets: [
+          {
+            label: 'Temperatura',
+            data: [-15, -15.9, -16, -16.1, -16, -15.9, -16.5],
+            backgroundColor: ['rgba(255, 99, 132, 1)'],
+            borderColor: ['rgba(255, 99, 132, 1)'],
+            borderWidth: 1
+          }
+        ]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    })
+  </script>
+  <script>
+    const modal = document.querySelector('.modal-container')
+    function abrir_model() {
+      modal.classList.add('abre')
+    }
+
+    function fechar_model() {
+      modal.classList.remove('abre')
+    }
+  </script>
+</html>
