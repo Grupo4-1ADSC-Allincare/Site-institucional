@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Sarala:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
 html,
 body {
   margin: 0;
@@ -7,19 +8,25 @@ body {
   height: 100%;
   font-family: poppins, sans-serif;
 }
+
 body::-webkit-scrollbar {
-  width: 1rem; /* width of the entire scrollbar */
+  width: 1rem;
+  /* width of the entire scrollbar */
 }
 
 body::-webkit-scrollbar-track {
-  background: #e5e5e5; /* color of the tracking area */
+  background: #e5e5e5;
+  /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #e06997; /* color of the scroll thumb */
-  border-radius: 100px; /* roundness of the scroll thumb */
+  background-color: #e06997;
+  /* color of the scroll thumb */
+  border-radius: 100px;
+  /* roundness of the scroll thumb */
   border: 3px solid #e5e5e5;
 }
+
 html {
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -37,9 +44,11 @@ html {
 .header .container {
   justify-content: space-between;
 }
+
 .header .container img {
   height: 80px;
 }
+
 .header {
   background-color: #add8e6;
   margin-bottom: 54;
@@ -80,12 +89,10 @@ html {
   border: none;
   padding: 5px;
   border-radius: 20px;
-  background-image: linear-gradient(
-    to right,
-    #e7abc2 0%,
-    #d5dff1 51%,
-    #e06997 100%
-  );
+  background-image: linear-gradient(to right,
+      #e7abc2 0%,
+      #d5dff1 51%,
+      #e06997 100%);
 
   background-size: 200% auto;
 }
@@ -105,6 +112,7 @@ html {
   border: none;
   transition: 0.5s;
 }
+
 /*
 .agora {
   display: flex;
@@ -145,6 +153,7 @@ html {
 span {
   color: #e74f89;
 }
+
 span.green {
   color: #00b167;
 }
@@ -157,14 +166,17 @@ span.green {
   padding: 0px;
   height: 40rem;
 }
+
 .container.content .span {
   width: 30px;
   font: 800 4rem serif;
 }
+
 .content .container.content {
   padding: 0px;
   flex-direction: column;
 }
+
 .content .container #medidor {
   height: 405px;
   width: 425px;
@@ -172,6 +184,7 @@ span.green {
   top: 350px;
   left: 65px;
 }
+
 .content .container.content .title {
   width: 900px;
   margin-top: 6.4rem;
@@ -228,6 +241,7 @@ span.green {
 .content-secundary .container h4 {
   margin-bottom: 0px;
 }
+
 .content-secundary .container img {
   height: 80px;
   width: 80px;
@@ -264,12 +278,10 @@ span.green {
 }
 
 .btn-2 {
-  background-image: linear-gradient(
-    to right,
-    #e7abc2 0%,
-    #d5dff1 51%,
-    #e06997 100%
-  );
+  background-image: linear-gradient(to right,
+      #e7abc2 0%,
+      #d5dff1 51%,
+      #e06997 100%);
 }
 
 /*.content-tertiary .container .container.content-tertiary button:hover {
@@ -290,6 +302,7 @@ span.green {
   margin: 0;
   height: 1080px;
 }
+
 .container.content-fourth .title {
   margin-top: 120px;
   width: 250px;
@@ -312,12 +325,10 @@ span.green {
   margin-top: 36px;
 
   border-radius: 15px;
-  background-image: linear-gradient(
-    to right,
-    #e7abc2 0%,
-    #d5dff1 51%,
-    #f89ec0 100%
-  );
+  background-image: linear-gradient(to right,
+      #e7abc2 0%,
+      #d5dff1 51%,
+      #f89ec0 100%);
   background-size: 200% auto;
   box-shadow: 5px 7px 5px rgb(146, 146, 146);
   display: flex;
@@ -370,19 +381,23 @@ span.green {
   justify-content: center;
   align-items: center;
 }
+
 .content-card .card .iconbx {
   margin-top: 0.7rem;
 }
+
 .content-card .card .iconbx .icon {
   height: 80px;
   width: 80px;
   color: #eb6699;
 }
+
 .content-card .card:hover .iconbx .icon {
   height: 80px;
   width: 80px;
   color: #fff;
 }
+
 .content-card .card {
   padding: 7px;
   margin: 30px;
@@ -394,18 +409,18 @@ span.green {
   width: 400px;
 
   border-radius: 20px;
-  background-image: linear-gradient(
-    to right,
-    #e7abc2 0%,
-    #d5dff1 51%,
-    #f89ec0 100%
-  );
+  background-image: linear-gradient(to right,
+      #e7abc2 0%,
+      #d5dff1 51%,
+      #f89ec0 100%);
   background-size: 200% auto;
   transition: 0.7s;
 }
+
 .content-card .card:hover img {
   color: var(--white);
 }
+
 .content-card .card:hover {
   margin: 0px 20px;
   display: flex;
@@ -417,12 +432,10 @@ span.green {
   border: none;
   border-radius: 20px;
   background-position: right center;
-  background-image: linear-gradient(
-    to right,
-    #e7abc2 0%,
-    #d5dff1 51%,
-    #f89ec0 100%
-  );
+  background-image: linear-gradient(to right,
+      #e7abc2 0%,
+      #d5dff1 51%,
+      #f89ec0 100%);
 
   transform: translateY(-20px);
   transition: 0.7s;
@@ -445,6 +458,7 @@ span.green {
 .content-footer {
   background-color: #add8e6;
 }
+
 .content-footer .container {
   display: flex;
   justify-content: space-between;
@@ -495,9 +509,11 @@ form input {
 .card.login h2 {
   margin-top: 15px px;
 }
+
 .card.login .h2 {
   width: 19rem;
 }
+
 .card.login form input {
   font-size: 16px;
   font-family: poppins, sans-serif;
@@ -507,18 +523,17 @@ form input {
   position: relative;
   bottom: 0.5rem;
 }
+
 form label {
   margin-top: 5px;
 }
 
 form button {
   margin: 3rem auto;
-  background-image: linear-gradient(
-    to right,
-    #e7abc2 0%,
-    #d5dff1 51%,
-    #f89ec0 100%
-  );
+  background-image: linear-gradient(to right,
+      #e7abc2 0%,
+      #d5dff1 51%,
+      #f89ec0 100%);
   background-size: 200% auto;
   color: rgb(255, 255, 255);
   padding: 8px;
@@ -570,6 +585,7 @@ form p {
   height: 50px;
   width: 50px;
 }
+
 /*========== CADASTRO ==========*/
 /*==========        ==========*/
 
@@ -580,10 +596,13 @@ form p {
   background-color: #add8e6;
   width: 100vw;
 }
+
 .content.cadastro .container.cadastro {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
+
 .content.cadastro .container.cadastro .login-img {
   position: absolute;
   left: 1rem;
@@ -591,6 +610,7 @@ form p {
   width: 750px;
   height: 1000px;
 }
+
 .content.cadastro .container.cadastro .cadastro-img {
   position: absolute;
   left: 80rem;
@@ -598,18 +618,18 @@ form p {
   width: 600px;
   height: 610px;
 }
+
 .card.cadastro {
   margin-top: 5rem;
   color: #e74f89;
   width: 400px;
-  height: 991px;
+  height: 700px;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   border-radius: 10px;
   box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
-
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -645,6 +665,7 @@ form p {
 
   padding-bottom: 50px;
 }
+
 .card.simulador {
   clip-path: inset(-15px 0px -15px -15px);
   box-shadow: 0 8px 20px 0 rgb(31 38 135 / 37%);
@@ -693,12 +714,10 @@ form p {
 
 div .card .btn {
   margin: 2rem auto;
-  background-image: linear-gradient(
-    to right,
-    #e7abc2 0%,
-    #d5dff1 51%,
-    #f89ec0 100%
-  );
+  background-image: linear-gradient(to right,
+      #e7abc2 0%,
+      #d5dff1 51%,
+      #f89ec0 100%);
   background-size: 200% auto;
   color: rgb(255, 255, 255);
   padding: 8px;
@@ -733,6 +752,7 @@ div .card .btn:hover {
   height: 1px;
   background: linear-gradient(90deg, #e6005a 32.55%, #add8e6 80.3%);
 }
+
 .divider-right {
   height: 1px;
   background: linear-gradient(90deg, #add8e6 32.5%, #e6005a 80.3%);
