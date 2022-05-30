@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DashBoard | Allincare</title>
   <link rel="stylesheet" type="text/css" href="dashboards.css" />
+  
 </head>
 
 <body>
@@ -18,7 +19,7 @@
             <span class="icon">
               <ion-icon name="medkit-outline"></ion-icon>
             </span>
-            <span class="title">Bem-vindo, <span class="spotlight">TransFarm</span></span>
+            <span class="title">Bem-vindo!</span>
           </a>
         </li>
         <li>
@@ -47,7 +48,7 @@
           </a>
         </li>
         <li>
-          <a href="/public/login.html">
+          <a href="../login.html">
             <span class="icon">
               <ion-icon name="log-out-outline"></ion-icon>
             </span>
@@ -74,7 +75,7 @@
 
         <div class="search">
           <div class="title">
-            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            <h3>Olá, <span id="b_usuario"></span>!</h3>
           </div>
         </div>
 
@@ -344,6 +345,7 @@
         <div class="modal-container">
           <div class="modal">
             <h1 class="title">Caminhão Id: 02 - Volks - 8150</h1>
+            <span id="mensagem_usuario"></span>
             <div class="graphBox">
               <div class="box"><canvas id="myChart2"></canvas></div>
             </div>
@@ -396,6 +398,7 @@
       </div>
     </div>
   </div>
+  <script src=""></script>
   <script src="public/js/my_chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -430,7 +433,7 @@
 
   function alterarTitulo(idVeiculo) {
     var tituloVeiculo = document.getElementById("tituloVeiculo")
-    b_usuario.innerHTML = "Últimas medidas de Temperatura do <span style='color: #e6005a'>Veículo " + idVeiculo + "</span>"
+    mensagem_usuario.innerHTML = "Últimas medidas de Temperatura do <span style='color: #e6005a'>Veículo " + idVeiculo + "</span>"
   }
 
   // O gráfico é construído com três funções:
@@ -524,8 +527,8 @@
         }
       }
     });
-
-    setTimeout(() => atualizarGrafico(idVeiculo, dados), 2000);
+    
+    setTimeout(() => atualizarGrafico(idVeiculo, dados), 1000);
   }
 
 
@@ -552,12 +555,12 @@
           window.grafico_linha.update();
 
           // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-          proximaAtualizacao = setTimeout(() => atualizarGrafico(idVeiculo, dados), 2000);
+          proximaAtualizacao = setTimeout(() => atualizarGrafico(idVeiculo, dados), 1000);
         });
       } else {
         console.error('Nenhum dado encontrado ou erro na API');
         // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-        proximaAtualizacao = setTimeout(() => atualizarGrafico(idVeiculo, dados), 2000);
+        proximaAtualizacao = setTimeout(() => atualizarGrafico(idVeiculo, dados), 1000);
       }
     })
       .catch(function (error) {
