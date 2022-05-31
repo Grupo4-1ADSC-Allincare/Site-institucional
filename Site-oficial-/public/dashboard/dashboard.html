@@ -8,6 +8,8 @@
   <title>DashBoard | Allincare</title>
   <link rel="stylesheet" type="text/css" href="dashboards.css" />
 
+  <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+
 </head>
 
 <body>
@@ -399,8 +401,8 @@
     </div>
   </div>
   <script src=""></script>
-  <script src="public/js/my_chart.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+  <!-- <script src="public/js/my_chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script> -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
@@ -494,13 +496,13 @@
     for (i = 0; i < resposta.length; i++) {
       var registro = resposta[i];
       dados.labels.push(registro.momento_grafico);
-      dados.datasets[0].data.push(registro.valorTemperatura);
+      dados.datasets[0].data.push(registro.temperatura);
     }
 
     console.log(JSON.stringify(dados));
 
     const ctx2 = document.getElementById('myChart2').getContext('2d')
-    const myChart2 = new Chart(ctx2, {
+    window.myChart2 = Chart.Line(ctx2, {
       type: 'line',
       data: dados,
       options: {
@@ -550,9 +552,9 @@
           dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
 
           dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
-          dados.datasets[0].data.push(novoRegistro[0].valorTemperatura); // incluir uma nova medida de temperatura
+          dados.datasets[0].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
 
-          window.grafico_linha.update();
+          window.myChart2.update();
 
           // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
           proximaAtualizacao = setTimeout(() => atualizarGrafico(idVeiculo, dados), 1000);
