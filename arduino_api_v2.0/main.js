@@ -41,7 +41,7 @@ const serial = async (
 
         if (HABILITAR_OPERACAO_INSERIR) {
             await poolBancoDados.execute(
-                'INSERT INTO HistMedida (fkVeiculo, valorTemperatura) VALUES (2, ?)',
+                'INSERT INTO HistMedida (fkVeiculo, valorTemperatura) VALUES (1, ?)',
                 [lm35Temperatura]
             );
             console.log("Valores inseridos no banco: " + lm35Temperatura)
