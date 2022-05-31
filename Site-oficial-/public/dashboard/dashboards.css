@@ -20,6 +20,7 @@
   --black1: #222;
   --black2: #999;
 }
+
 body {
   min-height: 100vh;
   overflow-x: hidden;
@@ -29,6 +30,7 @@ body {
   position: relative;
   width: 100%;
 }
+
 .navigation {
   position: fixed;
   width: 300px;
@@ -38,6 +40,7 @@ body {
   transition: 0.5s;
   overflow: hidden;
 }
+
 .navigation.active {
   width: 70px;
 }
@@ -56,14 +59,17 @@ body {
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
 }
+
 .navigation ul li:hover,
 .navigation ul li.hovered {
   background: var(--white);
 }
+
 .navigation ul li:nth-child(1) {
   margin-bottom: 40px;
   pointer-events: none;
 }
+
 .navigation ul li a {
   position: relative;
   display: block;
@@ -72,6 +78,7 @@ body {
   text-decoration: none;
   color: var(--white);
 }
+
 .navigation ul li:hover a,
 .navigation ul li.hovered a {
   color: var(--pink);
@@ -85,9 +92,11 @@ body {
   line-height: 70px;
   text-align: center;
 }
+
 .navigation ul li a .icon ion-icon {
   font-size: 1.75rem;
 }
+
 .navigation ul li a .title {
   position: relative;
   display: block;
@@ -97,9 +106,11 @@ body {
   text-align: start;
   white-space: nowrap;
 }
+
 .navigation ul li a .spotlight {
   color: var(--pink);
 }
+
 /* Curva na saída do hover */
 .navigation ul li:hover a::before,
 .navigation ul li.hovered a::before {
@@ -114,6 +125,7 @@ body {
   box-shadow: 35px 35px 0 10px var(--white);
   pointer-events: none;
 }
+
 .navigation ul li:hover a::after,
 .navigation ul li.hovered a::after {
   content: '';
@@ -137,6 +149,7 @@ body {
   background: var(--white);
   transition: 0.5s;
 }
+
 .main.active {
   width: calc(100% - 70px);
   left: 70px;
@@ -150,6 +163,7 @@ body {
   align-items: center;
   padding: 0 10px;
 }
+
 .toggle {
   position: relative;
   top: 0;
@@ -161,6 +175,7 @@ body {
   font-size: 2.5em;
   cursor: pointer;
 }
+
 .search {
   position: relative;
   width: 400px;
@@ -195,21 +210,21 @@ body {
 
 .user {
   position: relative;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  width: 60px;
+  height: 60px;
   overflow: hidden;
   cursor: pointer;
 }
 
-.user img {
+.user .icone {
   position: absolute;
-  top: 0;
+  top: 5px;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .cardBox {
   position: relative;
   width: 100%;
@@ -218,6 +233,7 @@ body {
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 30px;
 }
+
 .cardBox .card,
 .cardAlert .card {
   position: relative;
@@ -229,28 +245,34 @@ body {
   cursor: pointer;
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.1);
 }
+
 .cardBox .card .numbers,
 .cardAlert .card .numbers {
   position: relative;
   font-weight: 500;
   font-size: 2.5rem;
 }
+
 .cardBox .card:nth-child(1) {
   background: var(--criticoFrio);
   color: var(--white);
 }
+
 .cardBox .card:nth-child(2) {
   background: var(--alertaFrio);
   color: var(--white);
 }
+
 .cardBox .card:nth-child(3) {
   background: var(--ideal);
   color: var(--white);
 }
+
 .cardBox .card:nth-child(4) {
   background: var(--alertaQuente);
   color: var(--white);
 }
+
 .cardBox .card:nth-child(5) {
   background: var(--criticoQuente);
   color: var(--white);
@@ -264,6 +286,7 @@ body {
   font-size: 3.5rem;
   color: var(--white);
 }
+
 .cardAlert .card .cardName {
   font-size: 1.1rem;
   color: var(--black2);
@@ -273,14 +296,17 @@ body {
   font-size: 3.5rem;
   color: var(--criticoFrio);
 }
+
 .cardAlert .card:nth-child(2) {
   font-size: 3.5rem;
   color: var(--alertaFrio);
 }
+
 .cardAlert .card:nth-child(3) {
   font-size: 3.5rem;
   color: var(--ideal);
 }
+
 .cardAlert .card:nth-child(4) {
   font-size: 3.5rem;
   color: var(--alertaQuente);
@@ -309,6 +335,7 @@ body {
   grid-template-columns: 2fr 1fr;
   grid-gap: 30px;
 }
+
 .details .ordersTemp {
   position: relative;
   width: 100%;
@@ -325,6 +352,7 @@ body {
   justify-content: space-between;
   align-items: flex-start;
 }
+
 .cardHeader h2 {
   font-weight: 600;
   color: var(--blue);
@@ -348,6 +376,7 @@ body {
 .details table thead td {
   font-weight: 600;
 }
+
 .details .ordersTemp table tr {
   color: var(--black1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -356,10 +385,12 @@ body {
 .details .ordersTemp table tr:last-child {
   border-bottom: none;
 }
+
 .details .ordersTemp table tbody tr:hover {
   background: var(--blue);
   color: var(--white);
 }
+
 .details .ordersTemp table tr td {
   padding: 10px;
 }
@@ -373,15 +404,19 @@ body {
   border-radius: 6px;
   cursor: pointer;
 }
+
 .details .ordersTemp table tr td:last-child {
   text-align: end;
 }
+
 .details .ordersTemp table tr td:nth-child(2) {
   text-align: end;
 }
+
 .details .ordersTemp table tr td:nth-child(3) {
   text-align: center;
 }
+
 .status.ideal {
   padding: 2px 4px;
   background: var(--ideal);
@@ -390,6 +425,7 @@ body {
   font-weight: 500;
   font-size: 14px;
 }
+
 .status.alerta-quente {
   padding: 2px 4px;
   background: var(--alertaQuente);
@@ -398,6 +434,7 @@ body {
   font-weight: 500;
   font-size: 14px;
 }
+
 .status.critico-frio {
   padding: 2px 4px;
   background: var(--criticoFrio);
@@ -406,6 +443,7 @@ body {
   font-weight: 500;
   font-size: 14px;
 }
+
 .status.alerta-frio {
   padding: 2px 4px;
   background: var(--alertaFrio);
@@ -432,6 +470,7 @@ body {
   border-radius: 50%;
   overflow: hidden;
 }
+
 .recentTemp .imgBx .ion {
   position: absolute;
   top: 0;
@@ -440,26 +479,32 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
 .recentTemp table tr:hover {
   background: var(--blue);
   color: var(--white);
 }
+
 .recentTemp table tr td {
   padding: 12px 10px;
 }
+
 .recentTemp table tr td h4 {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.2em;
 }
+
 .recentTemp table tr td h4 .critico-frio {
   font-size: 14px;
   color: var(--criticoFrio);
 }
+
 .recentTemp table tr td h4 .alerta-frio {
   font-size: 14px;
   color: var(--alertaFrio);
 }
+
 .recentTemp table tr td h4 .alerta-quente {
   font-size: 14px;
   color: var(--alertaQuente);
@@ -469,6 +514,7 @@ body {
   background-color: var(--blue);
   color: var(--white);
 }
+
 .recentTemp table tr:hover td h4 span {
   color: var(--white);
 }
@@ -508,16 +554,15 @@ body {
   padding: 10px;
   background: var(--grey);
   border-radius: 10px;
-  width: 80%;
+  width: 100%;
   flex-direction: column;
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-
   align-items: center;
   justify-content: center;
 }
+
 .abre {
   display: flex;
 }
@@ -531,6 +576,7 @@ body {
     opacity: 0;
     transform: translate3d(0, -60px, 0);
   }
+
   to {
     opacity: 1;
     transform: translate3d(0, 0, 0);
@@ -546,6 +592,7 @@ body {
   border-radius: 8px;
   cursor: pointer;
 }
+
 .modal-container .modal h1 span {
   color: var(--pink);
 }
