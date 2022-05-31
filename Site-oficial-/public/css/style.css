@@ -95,6 +95,7 @@ html {
       #e06997 100%);
 
   background-size: 200% auto;
+  transition: 0.5s;
 }
 
 .header button:hover {
@@ -103,14 +104,14 @@ html {
   padding: 10px;
   border-radius: 20px;
 
-  transition: 0.5s;
+ 
   transform: translateY(-5px);
 }
 
 .header .login-hover:hover {
   color: #fff;
   border: none;
-  transition: 0.5s;
+ 
 }
 
 /*
@@ -483,7 +484,7 @@ span.green {
   border-radius: 10px;
   box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
 
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -545,6 +546,7 @@ form button {
   cursor: pointer;
   letter-spacing: 1px;
   font-weight: 500;
+  transition: 0.5s;
 }
 
 form button:hover {
@@ -559,7 +561,7 @@ form button:hover {
   cursor: pointer;
   letter-spacing: 1px;
   font-weight: 500;
-  transition: 0.5s;
+  
   text-shadow: #2f2f2f;
 }
 
@@ -607,16 +609,16 @@ form p {
   position: absolute;
   left: 1rem;
   top: 1rem;
-  width: 750px;
-  height: 1000px;
+  width: 550px;
+ 
 }
 
 .content.cadastro .container.cadastro .cadastro-img {
   position: absolute;
   left: 80rem;
   top: 22rem;
-  width: 600px;
-  height: 610px;
+  width: 800px;
+ 
 }
 
 .card.cadastro {
@@ -630,7 +632,7 @@ form p {
   justify-content: center;
   border-radius: 10px;
   box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
