@@ -1,8 +1,3 @@
--- Arquivo de apoio, caso você queira criar tabelas como as aqui criadas para a API funcionar.
--- Você precisa executar os comandos no banco de dados para criar as tabelas,
--- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
-
-/* para workbench - local - desenvolvimento */
 CREATE DATABASE Allincare;
 USE Allincare;
 
@@ -62,20 +57,10 @@ CREATE TABLE Veiculo(
 	modelo VARCHAR(45)
 );
 
-CREATE TABLE Sensor(
-	idSensor INT PRIMARY KEY AUTO_INCREMENT,
-    fkVeiculo INT,
-    FOREIGN KEY (fkVeiculo) REFERENCES Veiculo(idVeiculo),
-    nomeSensor VARCHAR(45),
-    tipoSensor VARCHAR(45),
-	situacao VARCHAR(3),
-    CHECK (situacao = "ON" OR situacao = "OFF")
-);
-
 CREATE TABLE HistMedida(
 	idHistMedida INT PRIMARY KEY AUTO_INCREMENT,
-	fkSensor INT,
-    FOREIGN KEY (fkSensor) REFERENCES Sensor(idSensor),
+	fkVeiculo INT,
+    FOREIGN KEY (fkVeiculo) REFERENCES Veiculo(idVeiculo),
     valorTemperatura INT,
 	dataHora DATETIME DEFAULT CURRENT_TIMESTAMP
 );
@@ -86,7 +71,6 @@ SELECT * FROM CargoUsuario;
 SELECT * FROM EnderecoTransp;
 SELECT * FROM ContatoTransp;
 SELECT * FROM Veiculo;
-SELECT * FROM Sensor;
 SELECT * FROM HistMedida;
 
 INSERT INTO Transportadora
@@ -133,53 +117,6 @@ VALUES (NULL,'1','ON','KRF395','2','Volks'),
 		(NULL,'3','ON','JDN846','2','Volvo'),
 		(NULL,'3','ON','LKO465','2','Mercedes'),
 		(NULL,'3','ON','XCB634','2','Volvo');
-	
-INSERT INTO Sensor
-VALUES (NULL,'1','LM35','Temperatura','ON'),
-		(NULL,'2','LM35','Temperatura','ON'),
-		(NULL,'3','LM35','Temperatura','ON'),
-        (NULL,'4','LM35','Temperatura','ON'),
-        (NULL,'5','LM35','Temperatura','ON'),
-        (NULL,'6','LM35','Temperatura','ON'),
-        (NULL,'7','LM35','Temperatura','ON'),
-        (NULL,'8','LM35','Temperatura','ON'),
-        (NULL,'9','LM35','Temperatura','ON'),
-        (NULL,'10','LM35','Temperatura','ON');
         
 INSERT INTO HistMedida
-VALUES (NULL,'1','32',CURRENT_TIMESTAMP),
-		(NULL,'1','3',CURRENT_TIMESTAMP),
-        (NULL,'2','12',CURRENT_TIMESTAMP),
-        (NULL,'2','40',CURRENT_TIMESTAMP),
-        (NULL,'3','7',CURRENT_TIMESTAMP),
-        (NULL,'3','15',CURRENT_TIMESTAMP);
-
-
-
-
-
-/* para sql server - remoto - produção */
-
-CREATE TABLE usuario (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-);
-
-CREATE TABLE aviso (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	titulo VARCHAR(100),
-    descricao VARCHAR(150),
-	fk_usuario INT FOREIGN KEY REFERENCES usuario(id)
-); 
-
-CREATE TABLE medida (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	temperatura DECIMAL,
-	umidade DECIMAL,
-	momento DATETIME,
-	fk_aquario INT
-);
-
-
+VALUES (NULL,'1','26',CURRENT_TIMESTAMP);
