@@ -471,7 +471,7 @@ body {
   overflow: hidden;
 }
 
-.recentTemp .imgBx .ion {
+.recentTemp .imgBx .ion, .ionCF, .ionAF, .ionCQ, .ionAQ {
   position: absolute;
   top: 0;
   left: 0;
@@ -479,6 +479,25 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+.recentTemp .imgBx .ion {
+ color: var(--ideal);
+}
+.recentTemp .imgBx .ionCF {
+  color: var(--criticoFrio);
+ }
+
+ .recentTemp .imgBx .ionAF {
+  color: var(--alertaFrio);
+ }
+
+ .recentTemp .imgBx .ionAQ {
+  color: var(--alertaQuente);
+ }
+
+ .recentTemp .imgBx .ionCQ {
+  color: var(--criticoQuente);
+ }
 
 .recentTemp table tr:hover {
   background: var(--blue);
@@ -508,6 +527,16 @@ body {
 .recentTemp table tr td h4 .alerta-quente {
   font-size: 14px;
   color: var(--alertaQuente);
+}
+
+.recentTemp table tr td h4 .ideal {
+  font-size: 14px;
+  color: var(--ideal);
+}
+
+.recentTemp table tr td h4 .critico-quente{
+  font-size: 14px;
+  color: var(--criticoQuente);
 }
 
 .recentTemp table tr:hover {
