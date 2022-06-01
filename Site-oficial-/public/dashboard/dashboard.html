@@ -162,70 +162,100 @@
                   <a onclick="abrir_model()" class="btn-model">Volks - 8150</a>
                 </td>
                 <td>01</td>
-                <td>-18°C</td>
+                <td id="temp1"></td>
                 <td>
-                  <span class="status alerta-quente">Alerta quente</span>
+                  <span class="status alerta-quente" id="alerta"></span>
                 </td>
               </tr>
               <tr>
-                <td>Mercedes - 710</td>
+                <td>
+                  <a onclick="abrir_model()" class="btn-model">Mercedes - 710</a>
+                </td>
                 <td>02</td>
-                <td>-22,9°C</td>
-                <td><span class="status critico-frio">Crítico frio</span></td>
+                <td id="temp2"></td>
+                <td>
+                  <span class="status alerta-quente" id="alerta2"></span>
+                </td>
               </tr>
               <tr>
-                <td>Volks - 9150</td>
+                <td>
+                  <a onclick="abrir_model()" class="btn-model">Volks - 9150</a>
+                </td>
                 <td>03</td>
-                <td>-21,9°C</td>
-                <td><span class="status alerta-frio">Alerta frio</span></td>
+                <td id="temp3"></td>
+                <td>
+                  <span class="status alerta-quente" id="alerta3"></span>
+                </td>
               </tr>
               <tr>
-                <td>Volks - 13180</td>
+                <td>
+                  <a onclick="abrir_model()" class="btn-model">Volks - 13180</a>
+                </td>
                 <td>04</td>
-                <td>-19,9°C</td>
-                <td><span class="status ideal">Ideal</span></td>
+                <td id="temp4"></td>
+                <td>
+                  <span class="status alerta-quente" id="alerta4"></span>
+                </td>
               </tr>
               <tr>
-                <td>Volvo - FH 460</td>
+                <td>
+                  <a onclick="abrir_model()" class="btn-model">Volvo - FH 460</a>
+                </td>
                 <td>05</td>
-                <td>-17,9°C</td>
+                <td id="temp5"></td>
                 <td>
-                  <span class="status alerta-quente">Alerta quente</span>
+                  <span class="status alerta-quente" id="alerta5"></span>
                 </td>
               </tr>
               <tr>
-                <td>Mercedes - Atego 2425</td>
+                <td>
+                  <a onclick="abrir_model()" class="btn-model">Mercedes - Atego 2425</a>
+                </td>
                 <td>06</td>
-                <td>-23,1°C</td>
-                <td><span class="status critico-frio">Crítico frio</span></td>
+                <td id="temp6"></td>
+                <td>
+                  <span class="status alerta-quente" id="alerta6"></span>
+                </td>
               </tr>
               <tr>
-                <td>Mercedes - Accelo 815</td>
+                <td>
+                  <a onclick="abrir_model()" class="btn-model">Mercedes - Accelo 815</a>
+                </td>
                 <td>07</td>
-                <td>-22,1°C</td>
-                <td><span class="status alerta-frio">Alerta frio</span></td>
+                <td id="temp7"></td>
+                <td>
+                  <span class="status alerta-quente" id="alerta7"></span>
+                </td>
               </tr>
               <tr>
-                <td>Volvo - 260</td>
+                <td>
+                  <a onclick="abrir_model()" class="btn-model">Volvo - 260</a>
+                </td>
                 <td>08</td>
-                <td>-18,4°C</td>
+                <td id="temp8"></td>
                 <td>
-                  <span class="status alerta-quente">Alerta quente</span>
+                  <span class="status alerta-quente" id="alerta8"></span>
                 </td>
               </tr>
               <tr>
-                <td>Scania - R440</td>
+                <td>
+                  <a onclick="abrir_model()" class="btn-model">Scania - R440</a>
+                </td>
                 <td>09</td>
-                <td>-18,2°C</td>
+                <td id="temp9"></td>
                 <td>
-                  <span class="status alerta-quente">Alerta quente</span>
+                  <span class="status alerta-quente" id="alerta9"></span>
                 </td>
               </tr>
               <tr>
-                <td>Volks - 13180</td>
+                <td>
+                  <a onclick="abrir_model()" class="btn-model">Volvo - 1298</a>
+                </td>
                 <td>10</td>
-                <td>-21,7°C</td>
-                <td><span class="status alerta-frio">Alerta frio</span></td>
+                <td id="temp10"></td>
+                <td>
+                  <span class="status alerta-quente" id="alerta10"></span>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -522,8 +552,8 @@
             id: 'y-temperatura',
             ticks: {
               beginAtZero: true,
-              max: 100,
-              min: 0
+              max: 0,
+              min: -30
             }
           },],
         }
@@ -558,7 +588,241 @@
 
           // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
           proximaAtualizacao = setTimeout(() => atualizarGrafico(idVeiculo, dados), 1000);
+
+          var nomeAlerta = document.getElementById('teste')
+          var caminhao1 = novoRegistro[0].temperatura
+          var caminhao2 = caminhao1
+          var caminhao3 = (caminhao1 - 0.5)
+          var caminhao4 = (caminhao1 - 18)
+          var caminhao5 = (caminhao1 - 20)
+          var caminhao6 = (caminhao1 + 5)
+          var caminhao7 = caminhao1
+          var caminhao8 = (caminhao1 - 5)
+          var caminhao9 = (caminhao1 - 15)
+          var caminhao10 = (caminhao1 - 7)
+
+          temp1.innerHTML = `${caminhao1}`
+          temp2.innerHTML = `${caminhao2}`
+          temp3.innerHTML = `${caminhao3}`
+          temp4.innerHTML = `${caminhao4}`
+          temp5.innerHTML = `${caminhao5}`
+          temp6.innerHTML = `${caminhao6}`
+          temp7.innerHTML = `${caminhao7}`
+          temp8.innerHTML = `${caminhao8}`
+          temp9.innerHTML = `${caminhao9}`
+          temp10.innerHTML = `${caminhao10}`
+
+          if (caminhao1 <= (-22.5)) {
+            alerta.style.backgroundColor = '#6600ff'
+            alerta.innerHTML = 'Crítico Frio'
+          }
+          else if (caminhao1 <= (-21.5)) {
+            alerta.style.backgroundColor = '#287bff'
+            alerta.innerHTML = 'Alerta Frio'
+          }
+          else if (caminhao1 >= (-17.5)) {
+            alerta.style.backgroundColor = '#ff0000'
+            alerta.innerHTML = 'Crítico Quente'
+          }
+          else if (caminhao1 >= (-18.5)) {
+            alerta.style.backgroundColor = '#ff9933'
+            alerta.innerHTML = 'Alerta Quente'
+          }
+          else {
+            alerta.style.backgroundColor = '#03bb85'
+            alerta.innerHTML = 'Ideal'
+          }
+
+          if (caminhao2 <= (-22.5)) {
+            alerta2.style.backgroundColor = '#6600ff'
+            alerta2.innerHTML = 'Crítico Frio'
+          }
+          else if (caminhao2 <= (-21.5)) {
+            alerta2.style.backgroundColor = '#287bff'
+            alerta2.innerHTML = 'Alerta Frio'
+          }
+          else if (caminhao2 >= (-17.5)) {
+            alerta2.style.backgroundColor = '#ff0000'
+            alerta2.innerHTML = 'Crítico Quente'
+          }
+          else if (caminhao2 >= (-18.5)) {
+            alerta2.style.backgroundColor = '#ff9933'
+            alerta2.innerHTML = 'Alerta Quente'
+          }
+          else {
+            alerta2.style.backgroundColor = '#03bb85'
+            alerta2.innerHTML = 'Ideal'
+          }
+
+          if (caminhao3 <= (-22.5)) {
+            alerta3.style.backgroundColor = '#6600ff'
+            alerta3.innerHTML = 'Crítico Frio'
+          }
+          else if (caminhao3 <= (-21.5)) {
+            alerta3.style.backgroundColor = '#287bff'
+            alerta3.innerHTML = 'Alerta Frio'
+          }
+          else if (caminhao3 >= (-17.5)) {
+            alerta3.style.backgroundColor = '#ff0000'
+            alerta3.innerHTML = 'Crítico Quente'
+          }
+          else if (caminhao3 >= (-18.5)) {
+            alerta3.style.backgroundColor = '#ff9933'
+            alerta3.innerHTML = 'Alerta Quente'
+          }
+          else {
+            alerta3.style.backgroundColor = '#03bb85'
+            alerta3.innerHTML = 'Ideal'
+          }
+
+          if (caminhao4 <= (-22.5)) {
+            alerta4.style.backgroundColor = '#6600ff'
+            alerta4.innerHTML = 'Crítico Frio'
+          }
+          else if (caminhao4 <= (-21.5)) {
+            alerta4.style.backgroundColor = '#287bff'
+            alerta4.innerHTML = 'Alerta Frio'
+          }
+          else if (caminhao4 >= (-17.5)) {
+            alerta4.style.backgroundColor = '#ff0000'
+            alerta4.innerHTML = 'Crítico Quente'
+          }
+          else if (caminhao4 >= (-18.5)) {
+            alerta4.style.backgroundColor = '#ff9933'
+            alerta4.innerHTML = 'Alerta Quente'
+          }
+          else {
+            alerta4.style.backgroundColor = '#03bb85'
+            alerta4.innerHTML = 'Ideal'
+          }
+        
+          if (caminhao5 <= (-22.5)) {
+            alerta5.style.backgroundColor = '#6600ff'
+            alerta5.innerHTML = 'Crítico Frio'
+          }
+          else if (caminhao5 <= (-21.5)) {
+            alerta5.style.backgroundColor = '#287bff'
+            alerta5.innerHTML = 'Alerta Frio'
+          }
+          else if (caminhao5 >= (-17.5)) {
+            alerta5.style.backgroundColor = '#ff0000'
+            alerta5.innerHTML = 'Crítico Quente'
+          }
+          else if (caminhao5 >= (-18.5)) {
+            alerta5.style.backgroundColor = '#ff9933'
+            alerta5.innerHTML = 'Alerta Quente'
+          }
+          else {
+            alerta5.style.backgroundColor = '#03bb85'
+            alerta5.innerHTML = 'Ideal'
+          }
+        
+          if (caminhao6 <= (-22.5)) {
+            alerta6.style.backgroundColor = '#6600ff'
+            alerta6.innerHTML = 'Crítico Frio'
+          }
+          else if (caminhao6 <= (-21.5)) {
+            alerta6.style.backgroundColor = '#287bff'
+            alerta6.innerHTML = 'Alerta Frio'
+          }
+          else if (caminhao6 >= (-17.5)) {
+            alerta6.style.backgroundColor = '#ff0000'
+            alerta6.innerHTML = 'Crítico Quente'
+          }
+          else if (caminhao6 >= (-18.5)) {
+            alerta6.style.backgroundColor = '#ff9933'
+            alerta6.innerHTML = 'Alerta Quente'
+          }
+          else {
+            alerta6.style.backgroundColor = '#03bb85'
+            alerta6.innerHTML = 'Ideal'
+          }
+        
+          if (caminhao7 <= (-22.5)) {
+            alerta7.style.backgroundColor = '#6600ff'
+            alerta7.innerHTML = 'Crítico Frio'
+          }
+          else if (caminhao7 <= (-21.5)) {
+            alerta7.style.backgroundColor = '#287bff'
+            alerta7.innerHTML = 'Alerta Frio'
+          }
+          else if (caminhao7 >= (-17.5)) {
+            alerta7.style.backgroundColor = '#ff0000'
+            alerta7.innerHTML = 'Crítico Quente'
+          }
+          else if (caminhao7 >= (-18.5)) {
+            alerta7.style.backgroundColor = '#ff9933'
+            alerta7.innerHTML = 'Alerta Quente'
+          }
+          else {
+            alerta7.style.backgroundColor = '#03bb85'
+            alerta7.innerHTML = 'Ideal'
+          }
+        
+          if (caminhao8 <= (-22.5)) {
+            alerta8.style.backgroundColor = '#6600ff'
+            alerta8.innerHTML = 'Crítico Frio'
+          }
+          else if (caminhao8 <= (-21.5)) {
+            alerta8.style.backgroundColor = '#287bff'
+            alerta8.innerHTML = 'Alerta Frio'
+          }
+          else if (caminhao8 >= (-17.5)) {
+            alerta8.style.backgroundColor = '#ff0000'
+            alerta8.innerHTML = 'Crítico Quente'
+          }
+          else if (caminhao8 >= (-18.5)) {
+            alerta8.style.backgroundColor = '#ff9933'
+            alerta8.innerHTML = 'Alerta Quente'
+          }
+          else {
+            alerta8.style.backgroundColor = '#03bb85'
+            alerta8.innerHTML = 'Ideal'
+          }
+        
+          if (caminhao9 <= (-22.5)) {
+            alerta9.style.backgroundColor = '#6600ff'
+            alerta9.innerHTML = 'Crítico Frio'
+          }
+          else if (caminhao9 <= (-21.5)) {
+            alerta9.style.backgroundColor = '#287bff'
+            alerta9.innerHTML = 'Alerta Frio'
+          }
+          else if (caminhao9 >= (-17.5)) {
+            alerta9.style.backgroundColor = '#ff0000'
+            alerta9.innerHTML = 'Crítico Quente'
+          }
+          else if (caminhao9 >= (-18.5)) {
+            alerta9.style.backgroundColor = '#ff9933'
+            alerta9.innerHTML = 'Alerta Quente'
+          }
+          else {
+            alerta9.style.backgroundColor = '#03bb85'
+            alerta9.innerHTML = 'Ideal'
+          }
+        
+          if (caminhao10 <= (-22.5)) {
+            alerta10.style.backgroundColor = '#6600ff'
+            alerta10.innerHTML = 'Crítico Frio'
+          }
+          else if (caminhao10 <= (-21.5)) {
+            alerta10.style.backgroundColor = '#287bff'
+            alerta10.innerHTML = 'Alerta Frio'
+          }
+          else if (caminhao10 >= (-17.5)) {
+            alerta10.style.backgroundColor = '#ff0000'
+            alerta10.innerHTML = 'Crítico Quente'
+          }
+          else if (caminhao10 >= (-18.5)) {
+            alerta10.style.backgroundColor = '#ff9933'
+            alerta10.innerHTML = 'Alerta Quente'
+          }
+          else {
+            alerta10.style.backgroundColor = '#03bb85'
+            alerta10.innerHTML = 'Ideal'
+          }
         });
+
       } else {
         console.error('Nenhum dado encontrado ou erro na API');
         // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
@@ -568,8 +832,8 @@
       .catch(function (error) {
         console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
       });
-
   }
+
 </script>
 
 <script>
