@@ -65,6 +65,10 @@ CREATE TABLE HistMedida(
 	dataHora DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
+ALTER TABLE HistMedida MODIFY COLUMN valorTemperatura DECIMAL(3,1);
+
+DESC HistMedida;
+
 SELECT * FROM Transportadora;
 SELECT * FROM UsuarioTransp;
 SELECT * FROM CargoUsuario;
@@ -119,4 +123,29 @@ VALUES (NULL,'1','ON','KRF395','2','Volks'),
 		(NULL,'3','ON','XCB634','2','Volvo');
         
 INSERT INTO HistMedida
-VALUES (NULL,'1','26',CURRENT_TIMESTAMP);
+VALUES (NULL,'1','25.6',CURRENT_TIMESTAMP);
+
+select * from HistMedida;
+
+SELECT fkVeiculo, valorTemperatura,
+CASE
+WHEN valorTemperatura <= '-22.5' THEN 'Crítico Frio'
+WHEN valorTemperatura <= '-21.5' THEN 'Alerta Frio'
+WHEN valorTemperatura >= '-17.5' THEN 'Crítico Quente'
+WHEN valorTemperatura >= '-18.5' THEN 'Alerta Quente'
+ELSE 'Ideal'
+END AS alertas
+FROM HistMedida;
+
+SELECT
+CASE
+WHEN valorTemperatura <= '-22.5' THEN 'Crítico Frio'
+WHEN valorTemperatura <= '-21.5' THEN 'Alerta Frio'
+WHEN valorTemperatura >= '-17.5' THEN 'Crítico Quente'
+WHEN valorTemperatura >= '-18.5' THEN 'Alerta Quente'
+ELSE 'Ideal'
+END AS alertas,
+COUNT(*) AS quantidade
+FROM HistMedida
+GROUP BY alertas
+ORDER BY quantidade DESC;
