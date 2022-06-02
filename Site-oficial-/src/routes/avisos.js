@@ -11,6 +11,10 @@ router.get("/listar", function (req, res) {
     avisoController.listar(req, res);
 });
 
+router.get("/count", function (req, res) {
+    avisoController.count(req, res);
+});
+
 router.get("/listar/:idUsuario", function (req, res) {
     avisoController.listarPorUsuario(req, res);
 });
@@ -32,3 +36,6 @@ router.delete("/deletar/:idAviso", function (req, res) {
 });
 
 module.exports = router;
+
+
+

@@ -471,7 +471,11 @@ body {
   overflow: hidden;
 }
 
-.recentTemp .imgBx .ion, .ionCF, .ionAF, .ionCQ, .ionAQ {
+.recentTemp .imgBx .ion,
+.ionCF,
+.ionAF,
+.ionCQ,
+.ionAQ {
   position: absolute;
   top: 0;
   left: 0;
@@ -481,23 +485,24 @@ body {
 }
 
 .recentTemp .imgBx .ion {
- color: var(--ideal);
+  color: var(--ideal);
 }
+
 .recentTemp .imgBx .ionCF {
   color: var(--criticoFrio);
- }
+}
 
- .recentTemp .imgBx .ionAF {
+.recentTemp .imgBx .ionAF {
   color: var(--alertaFrio);
- }
+}
 
- .recentTemp .imgBx .ionAQ {
+.recentTemp .imgBx .ionAQ {
   color: var(--alertaQuente);
- }
+}
 
- .recentTemp .imgBx .ionCQ {
+.recentTemp .imgBx .ionCQ {
   color: var(--criticoQuente);
- }
+}
 
 .recentTemp table tr:hover {
   background: var(--blue);
@@ -534,7 +539,7 @@ body {
   color: var(--ideal);
 }
 
-.recentTemp table tr td h4 .critico-quente{
+.recentTemp table tr td h4 .critico-quente {
   font-size: 14px;
   color: var(--criticoQuente);
 }
@@ -552,7 +557,8 @@ body {
   position: relative;
   width: 100%;
   padding: 20px;
-  display: grid;
+  display: flex;
+  justify-content: center;
   grid-template-columns: 1fr 2fr;
   grid-gap: 30px;
   min-height: 200px;
@@ -567,10 +573,17 @@ body {
   border-radius: 20px;
 }
 
+.graphBox .box:nth-child(1) {
+
+  height: 600px;
+  width: 1200px;
+
+}
+
 /* MODAL */
 
 .modal-container {
-  width: 100vw;
+  width: 83vw;
   position: fixed;
   top: 30px;
   z-index: 9999;

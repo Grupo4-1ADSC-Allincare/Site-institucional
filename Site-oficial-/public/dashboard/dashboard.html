@@ -260,118 +260,12 @@
             </tbody>
           </table>
         </div>
+
         <!-- detalhe top 10-->
         <div class="recentTemp">
           <div class="cardHeader">
-            <h2>Contagem de Alertas</h2>
+            <canvas id="myChart"></canvas>
           </div>
-          <table>
-            <tr>
-              <td width="60px">
-                <div class="imgBx">
-                  <ion-icon class="ionCF" name="bus-outline"></ion-icon>
-                </div>
-              </td>
-
-              <td>
-                <h4>
-                  <span class="critico-frio">Crítico frio</span>
-                </h4>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td width="60px">
-                <div class="imgBx">
-                  <ion-icon class="ionAF" name="bus-outline"></ion-icon>
-                </div>
-              </td>
-              <td>
-                <h4>
-                  <span class="alerta-frio">Alerta Frio</span>
-                </h4>
-              </td>
-              <td>Caminhão em estado crítico frio, faça algo imediatamente!</td>
-            </tr>
-            <tr>
-              <td width="60px">
-                <div class="imgBx">
-                  <ion-icon class="ion" name="bus-outline"></ion-icon>
-                </div>
-              </td>
-              <td>
-                <h4>
-                  <span class="ideal">Ideal</span>
-                </h4>
-              </td>
-              <td>Caminhão em estado de alerta frio, faça algo imediatamente!</td>
-            </tr>
-            <tr>
-              <td width="60px">
-                <div class="imgBx">
-                  <ion-icon class="ionAQ" name="bus-outline"></ion-icon>
-                </div>
-              </td>
-              <td>
-                <h4>
-                  <span class="alerta-quente">Alerta Quente</span>
-                </h4>
-              </td>
-              <td>Caminhão em estado de alerta frio, faça algo imediatamente!</td>
-            </tr>
-            <tr>
-              <td width="60px">
-                <div class="imgBx">
-                  <ion-icon class="ionCQ" name="bus-outline"></ion-icon>
-                </div>
-              </td>
-              <td>
-                <h4>
-                  <span class="critico-quente">Crítico Quente</span>
-                </h4>
-              </td>
-              <td>Caminhão em estado de alerta frio, faça algo imediatamente!</td>
-            </tr>
-            <!-- <tr>
-              <td width="60px">
-                <div class="imgBx">
-                  <ion-icon class="ion" name="bus-outline"></ion-icon>
-                </div>
-              </td>
-              <td>
-                <h4>
-                  Id:05<br /><span class="alerta-quente">Alerta quente</span>
-                </h4>
-              </td>
-              <td>Caminhão em estado de alerta quente, faça algo imediatamente!</td>
-            </tr>
-            <tr>
-              <td width="60px">
-                <div class="imgBx">
-                  <ion-icon class="ion" name="bus-outline"></ion-icon>
-                </div>
-              </td>
-              <td>
-                <h4>
-                  Id:02<br /><span class="alerta-quente">Alerta quente</span>
-                </h4>
-              </td>
-              <td>Caminhão em estado de alerta quente, faça algo imediatamente!</td>
-            </tr>
-            <tr>
-              <td width="60px">
-                <div class="imgBx">
-                  <ion-icon class="ion" name="bus-outline"></ion-icon>
-                </div>
-              </td>
-              <td>
-                <h4>
-                  Id:09<br /><span class="alerta-quente">Alerta quente</span>
-                </h4>
-              </td>
-              <td>Caminhão em estado de alerta quente, faça algo imediatamente!</td>
-            </tr> -->
-          </table>
         </div>
 
         <div class="modal-container">
@@ -457,8 +351,10 @@
 </body>
 <script>
 
+  var respostaAlerta;
   let proximaAtualizacao;
 
+  window.onload = count();
   window.onload = obterDadosGrafico(1);
 
   b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
@@ -506,7 +402,7 @@
   // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
   // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
   // A função *plotarGrafico* também invoca a função *atualizarGrafico*
-  function plotarGrafico(resposta, idVeiculo) {
+  function plotarGrafico(resposta, idVeiculo,) {
     console.log('Iniciando plotagem do gráfico...');
 
     var dados = {
@@ -515,7 +411,7 @@
         {
           yAxisID: 'y-temperatura',
           label: 'Temperatura',
-          borderColor: '#FFF',
+          borderColor: 'blue',
           backgroundColor: '#32b9cd8f',
           fill: true,
           data: []
@@ -561,8 +457,60 @@
     });
 
     setTimeout(() => atualizarGrafico(idVeiculo, dados), 1000);
-  }
 
+    var qtdAlertas = {
+      labels: [],
+      datasets: [
+        {
+          yAxisID: 'y-alertas',
+          label: 'Quantidade de Alertas',
+          borderColor: '#000',
+          backgroundColor: '#32b',
+          fill: true,
+          data: []
+        }
+      ]
+    };
+
+    for (i = 0; i < respostaAlerta.length; i++) {
+      var registroAlertas = respostaAlerta[i];
+      qtdAlertas.labels.push(registroAlertas.alertas);
+      qtdAlertas.datasets[0].data.push(registroAlertas.quantidade);
+    }
+
+    console.log(JSON.stringify(qtdAlertas));
+
+    const ctx = document.getElementById('myChart').getContext('2d')
+    window.myChart = Chart.Line(ctx, {
+      type: 'bar',
+      data: qtdAlertas,
+      options: {
+        responsive: true,
+        animation: { duration: 500 },
+        hoverMode: 'index',
+        stacked: false,
+        title: {
+          display: false,
+          text: 'Dados capturados'
+        },
+        scales: {
+          yAxes: [{
+            type: 'linear',
+            display: true,
+            position: 'left',
+            id: 'y-alertas',
+            ticks: {
+              beginAtZero: true,
+              max: 5,
+              min: 0
+            }
+          },],
+        }
+      }
+    });
+
+    setTimeout(() => atualizarGrafico(idVeiculo, qtdAlertas), 1000);
+  }
 
   // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
   // buscando a última medida inserida em tabela contendo as capturas, 
@@ -695,7 +643,7 @@
             alerta4.style.backgroundColor = '#03bb85'
             alerta4.innerHTML = 'Ideal'
           }
-        
+
           if (caminhao5 <= (-22.5)) {
             alerta5.style.backgroundColor = '#6600ff'
             alerta5.innerHTML = 'Crítico Frio'
@@ -716,7 +664,7 @@
             alerta5.style.backgroundColor = '#03bb85'
             alerta5.innerHTML = 'Ideal'
           }
-        
+
           if (caminhao6 <= (-22.5)) {
             alerta6.style.backgroundColor = '#6600ff'
             alerta6.innerHTML = 'Crítico Frio'
@@ -737,7 +685,7 @@
             alerta6.style.backgroundColor = '#03bb85'
             alerta6.innerHTML = 'Ideal'
           }
-        
+
           if (caminhao7 <= (-22.5)) {
             alerta7.style.backgroundColor = '#6600ff'
             alerta7.innerHTML = 'Crítico Frio'
@@ -758,7 +706,7 @@
             alerta7.style.backgroundColor = '#03bb85'
             alerta7.innerHTML = 'Ideal'
           }
-        
+
           if (caminhao8 <= (-22.5)) {
             alerta8.style.backgroundColor = '#6600ff'
             alerta8.innerHTML = 'Crítico Frio'
@@ -779,7 +727,7 @@
             alerta8.style.backgroundColor = '#03bb85'
             alerta8.innerHTML = 'Ideal'
           }
-        
+
           if (caminhao9 <= (-22.5)) {
             alerta9.style.backgroundColor = '#6600ff'
             alerta9.innerHTML = 'Crítico Frio'
@@ -800,7 +748,7 @@
             alerta9.style.backgroundColor = '#03bb85'
             alerta9.innerHTML = 'Ideal'
           }
-        
+
           if (caminhao10 <= (-22.5)) {
             alerta10.style.backgroundColor = '#6600ff'
             alerta10.innerHTML = 'Crítico Frio'
@@ -831,6 +779,23 @@
     })
       .catch(function (error) {
         console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+  }
+
+  function count() {
+    fetch(`/avisos/count`).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (resposta) {
+          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+          respostaAlerta = resposta
+        });
+      } else {
+        throw ('Nenhum resultado encontrado!')
+      }
+    })
+      .catch(function (resposta) {
+
+        console.error(resposta);
       });
   }
 

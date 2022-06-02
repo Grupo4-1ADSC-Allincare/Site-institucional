@@ -5,8 +5,8 @@ function testar(req, res) {
     res.send("ENTRAMOS NO AVISO CONTROLLER");
 }
 
-function listar(req, res) {
-    avisoModel.listar().then(function (resultado) {
+function count(req, res) {
+    avisoModel.count().then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -133,7 +133,7 @@ function deletar(req, res) {
 
 module.exports = {
     testar,
-    listar,
+    count,
     listarPorUsuario,
     pesquisarDescricao,
     publicar,
